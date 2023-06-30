@@ -6,9 +6,24 @@
 var upperCase = 'ABCDEFRHIJKLMNOPQRSTUVWXYZ'
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
 var numeric = '0123456789'
+var specialChar = " !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ "
 
 // This variable declaration references the HTML element of "generate" //
 var generateBtn = document.querySelector("#generate");
+
+generatePassword = () => {
+  var passwordText = [];
+
+  var length = prompt("Choose a password length between 8 and 128 characters")
+  var legnthParse = parseFloat(length);
+  var confirmSpecial = confirm("Would you like to use uppercase characters?")
+  var lowerCase = confirm("Would you like to use lowercase characters?")
+  var numeric = confirm("Would you like to use numbers?")
+  var specialChar = confirm ("Would you like to include special characters?")
+}
+
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -20,7 +35,9 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); {
+
+}
 
 // Pseudo Code
 // The user requests to generate a randome password
