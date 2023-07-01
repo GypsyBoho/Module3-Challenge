@@ -16,8 +16,14 @@ var generateBtn = document.querySelector("#generate");
 // Phase One - gathering info, asking the user
 generatePassword = () => {
   var passwordResult = [];
-  var N = prompt("Choose a password length between 8 and 128 characters")
-  
+  var N = parseInt(prompt("Choose a password length between 8 and 128 characters"), 10);
+
+  // This returns the alert that the user inputted something other than a number //
+  if (Number.isNaN(N)) {
+    alert("You must enter a number");
+    return null;
+  }
+
   if (N < 8 || N > 128) {
     alert("Your password must be between 8 and 128 characters")
   } else {
@@ -27,50 +33,55 @@ generatePassword = () => {
     var specialCharPrompt = confirm("Would you like to include special characters?")
 
   }
-  
+
   // if (length < 8 && length > 128) {
   // } else {
   //   alert("Your password must be between 8 and 128 characters")
   // }
 
-// All are true or false values and since they are true by default they don't need the == //
-// These "if" statements picks a random spot in the array, letter (Upper/Lower), special Characters, makes sure it's picking a whole integer in the array and not //
-// Select one character from one string //
+  // All are true or false values and since they are true by default they don't need the == //
+  // These "if" statements picks a random spot in the array, letter (Upper/Lower), special Characters, makes sure it's picking a whole integer in the array and not //
+  // Select one character from one string //
   if (upperCasePrompt) {
     // for (var i = 0; i < upperCase.length; ++i)
-      passwordResult.push(upperCase[Math.floor(Math.random() * upperCase.length)]) 
-      N--;
-      allInclusive = allInclusive + upperCase
-    }
+    passwordResult.push(upperCase[Math.floor(Math.random() * upperCase.length)])
+    N--;
+    allInclusive = allInclusive + upperCase
+  }
 
   if (lowerCasePrompt) {
     // for (var i = 0; i < lowerCase.length; ++i)
-      passwordResult.push(lowerCase[Math.floor(Math.random() * lowerCase.length)])
-      N--;
-      allInclusive = allInclusive + lowerCase
-      
+    passwordResult.push(lowerCase[Math.floor(Math.random() * lowerCase.length)])
+    N--;
+    allInclusive = allInclusive + lowerCase
+
   }
 
   if (numericPrompt) {
     // for (var i = 0; i < numericResult.length; ++i)
-      passwordResult.push(numeric[Math.floor(Math.random() * numeric.length)])
-      N--;
-      allInclusive = allInclusive + numeric
+    passwordResult.push(numeric[Math.floor(Math.random() * numeric.length)])
+    N--;
+    allInclusive = allInclusive + numeric
   }
 
   if (specialCharPrompt) {
     // for (var i = 0; i < specialCharResult.length; ++i)
-      passwordResult.push(specialChar[Math.floor(Math.random() * specialChar.length)])
-      N--;
-      allInclusive = allInclusive + specialChar
-    }
+    passwordResult.push(specialChar[Math.floor(Math.random() * specialChar.length)])
+    N--;
+    allInclusive = allInclusive + specialChar
+  }
+
+  if (specialCharPrompt === false && numericPrompt === false && lowerCasePrompt === false && upperCasePrompt === false) {
+    alert("You must choose at least one character type");
+    return null;
+  }
 
   for (var i = 0; i < N; ++i) {
     passwordResult.push(allInclusive[Math.floor(Math.random() * allInclusive.length)])
 
   }
 
-    return passwordResult.join("");
+  return passwordResult.join("");
 
 }
 
