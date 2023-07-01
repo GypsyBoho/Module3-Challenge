@@ -23,18 +23,21 @@
 To use the password generator 
 - click on the "Generate Password" button
 - type in the number of characters you want in your password. It must be between 8 and 128 characters
-- decide if you want upper case letters, lower case letters, numberical characters and or special characters to be included in the password
+- decide if you want upper case letters, lower case letters, numerical characters and or special characters to be included in the password
 - you should see the randomly generated password appear within the window once you have cycled through all the choices
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+![alt text](assets/images/psw-gen-screen1.png)
+![alt text](assets/images/psw-gen-screen2.png)
+![alt text](assets/images/psw-gen-screen3.png)
+![alt text](assets/images/psw-gen-screen4.png)
+![alt text](assets/images/psw-gen-screen5.png)
+![alt text](assets/images/psw-gen-screen6.png)
+![alt text](assets/images/psw-gen-screen7.png)
 
-```md
-![alt text](assets/images/screenshot.png)
-```
 
 ## Credits
 
-NA
+I'd like to credit my classmates for help and w3schools.
 
 ## License
 
