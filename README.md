@@ -15,7 +15,7 @@
 - The secure password generator is secure because it randomly selects from the user's input and requires at least 8 characters which is proven to strengthen passwords.
 - It taught me a lot about if and for loops that I used to create and return the string of random characters.
 
-[Visit the Horiseon Deployed Site](https://gypsyboho.github.io/Module1-Challenge/)
+[Secure Password Generator](https://gypsyboho.github.io/Module3-Challenge/)
 
 
 ## Usage 
