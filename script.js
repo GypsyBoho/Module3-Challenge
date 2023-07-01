@@ -6,6 +6,7 @@
 var upperCase = 'ABCDEFRHIJKLMNOPQRSTUVWXYZ'
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz'
 var numeric = '0123456789'
+// Not sure if I did the special characgers write, I tried a few different versions //
 var specialChar = "\"\ !#$%&'()*+,-./:;<=>?@[]^_`{|}~ "
 
 // This variable declaration references the HTML element of "generate" //
@@ -31,27 +32,29 @@ generatePassword = () => {
   // }
 
 // All are true or false values and since they are true by default they don't need the == //
+// These "if" statements picks a random spot in the array, letter (Upper/Lower), special Characters, makes sure it's picking a whole integer in the array and not //
+
   if (upperCasePrompt) {
-    for (var i = 0; i <= upperCase.length; ++i) {
-      passwordText.push((Math.floor(Math.random() * password.Text.upperCase)))
+    for (var i = 0; i < upperCase.length; ++i) {
+      passwordResult.push((Math.floor(Math.random() * password.Text.upperCase)))
     }
   }
 
   if (lowerCasePrompt) {
-    for (var i = 0; i <= lowerCase.length; ++i) {
-      passwordText.push((Math.floor(Math.random() * password.Text.lowerCase)))
+    for (var i = 0; i < lowerCase.length; ++i) {
+      passwordResult.push((Math.floor(Math.random() * password.Text.lowerCase)))
     }
   }
 
   if (numericPrompt) {
-    for (var i = 0; i < passwordResult.length; ++i) {
-      passwordText.push((Math.floor(Math.random() * passwordText.numeric)))
+    for (var i = 0; i < numericResult.length; ++i) {
+      passwordResult.push((Math.floor(Math.random() * passwordText.numeric)))
     }
   }
 
   if (specialCharPrompt) {
-    for (var i = 0; i < passwordResult.length; ++i) {
-      passwordText.push((Math.floor(Math.random() * passwordText.legth)))
+    for (var i = 0; i < specialCharResult.length; ++i) {
+      passwordResult.push((Math.floor(Math.random() * passwordText.legth)))
     }
   }
 
@@ -66,13 +69,22 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
+writePassword ();
+// I need a for loop combining the pool avaialble characters and randomly generate it //
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword); {
 
 }
+let password = " ";
 
+  for (let i = 0; i < length; i++) {
+    password += selectedCharacters.charAt(
+      Math.floor(Math.random() * selectedCharacters.length)
+    );
+  }
+
+  return password;
 
 
 // Pseudo Code
